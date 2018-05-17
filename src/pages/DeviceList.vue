@@ -9,12 +9,13 @@
       </div>
     </div>
     <mt-loadmore :top-method="loadDeviceList" ref="loadmore" :style="{ 'min-height': wrapperHeight + 'px' }">
-        <div v-for="(item,index)  in deviceList" >
+      <div v-for="(item,index)  in deviceList" >
 
-          <device-item style="margin: 1rem" :key="item.orderId" :type="item.type" :orderId="item.orderId" :ueSn="item.ueSn" :ebikeReportData="item.ebikeReportData" :address="item.address" :productName="item.productName" :days="item.days" :defaultMileage="item.rentOrderEntity.productEntity
-    .remark"></device-item>
+        <device-item  :key="item.orderId" :type="item.type" :orderId="item.orderId" :ueSn="item.ueSn" :ebikeReportData="item.ebikeReportData" :address="item.address" :productName="item.productName" :days="item.days" :defaultMileage="item.rentOrderEntity.productEntity
+  .remark"></device-item>
 
-        </div>
+      </div>
+      <div style="height: 3.5rem"></div>
     </mt-loadmore>
 
   </div>
@@ -56,6 +57,11 @@
           } else {
             this.isShowHint = false
           }
+          // auto refresh
+          if (this.IntervalId) {
+            window.clearInterval(this.IntervalId)
+          }
+          this.IntervalId = window.setInterval(this.loadDeviceList, 15 * 1000)
         })
           .catch(error => {
             this.$refs.loadmore.onTopLoaded()
@@ -75,12 +81,12 @@
         this.axios.defaults.headers.common['firm'] = this.$route.query.firm
         if (this.$route.query.token) {
           this.axios.defaults.headers.common['Authorization'] = this.$route.query.token
+          this.loadDeviceList()
+        } else {
+          this.deviceList = []
+          this.isShowHint = true
         }
       }
-
-      this.loadDeviceList()
-      // auto refresh
-      this.IntervalId = window.setInterval(this.loadDeviceList, 15 * 1000)
     },
     destroyed () {
       window.clearInterval(this.IntervalId)

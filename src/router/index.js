@@ -25,6 +25,8 @@ import RentBattery from '@/pages/RentBattery'
 import OrderOpsQRCode from '@/pages/OrderOpsQRCode'
 // 退款账户设置
 import UserPayAccount from '@/pages/UserPayAccount'
+// 余额
+import Balance from '@/pages/Balance'
 // 运维首页
 import OpsMain from '@/pages/OpsMain'
 // 运维订单处理页面
@@ -49,7 +51,6 @@ import Incomelist from '@/pages/IncomeList'
 import OpsUserPsw from '@/pages/OpsUserPsw'
 // 用户中心-关于
 import OpsAbout from '@/pages/OpsAbout'
-import OpsMain2 from '@/pages/OpsMain2'
 // 电池查询-输入
 import SearchMain from '@/pages/SearchMain'
 // 分站电池统计
@@ -109,11 +110,6 @@ export default new Router({
       path: '/ops-main',
       name: 'OpsMain',
       component: OpsMain
-    },
-    {
-      path: '/ops-main2',
-      name: 'OpsMain2',
-      component: OpsMain2
     },
     {
       path: '/search-main',
@@ -194,6 +190,11 @@ export default new Router({
       path: '/user-pay-account',
       name: 'UserPayAccount',
       component: UserPayAccount
+    },
+    {
+      path: '/balance',
+      name: 'Balance',
+      component: Balance
     }
   ]
 })
