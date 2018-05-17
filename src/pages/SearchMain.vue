@@ -1,14 +1,14 @@
 <template>
   <div class="container">
-    <div class="completed-box">
-      <div class="completed">
-        <input v-model='ccusn' type="text" class="form-control searchResult"
-               placeholder="输入序列号" onblur="if(this.placeholder==''){this.placeholder='输入序列号'}"
-               onfocus="if(this.placeholder=='输入序列号'){this.placeholder=''}" >
-        <mt-button class="mintui mintui-search" style="margin-left: 8px;width: 40px;height: 40px" @click="searchequipment"></mt-button>
-      </div>
+    <!--<div class="completed-box">-->
+      <!--<div class="completed">-->
+        <!--<input v-model='ccusn' type="text" class="form-control searchResult"-->
+               <!--placeholder="输入序列号" onblur="if(this.placeholder==''){this.placeholder='输入序列号'}"-->
+               <!--onfocus="if(this.placeholder=='输入序列号'){this.placeholder=''}" >-->
+        <!--<mt-button class="mintui mintui-search" style="margin-left: 8px;width: 40px;height: 40px" @click="searchequipment"></mt-button>-->
+      <!--</div>-->
 
-    </div>
+    <!--</div>-->
 
     <div class="h-container">
       <!--<div style="flex: 1">-->

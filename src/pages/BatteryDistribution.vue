@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="h-btn-container"><mt-button type="default" class="action-btn" @click="dealerSelect">{{dealerTitle}}</mt-button></div>
+    <!--<div class="h-btn-container"><mt-button type="default" class="action-btn" @click="dealerSelect">{{dealerTitle}}</mt-button></div>-->
 
     <div class="h-btn-container"><mt-button type="default" class="action-btn" @click="storeSelect">{{storeTitle}}</mt-button></div>
 
@@ -66,16 +66,16 @@
           }
         }
       },
-      dealerSelect () {
-        this.popupVisible = true
-        this.selectModel = 0
-        this.loadStores(1, null)
-      },
+//      dealerSelect () {
+//        this.popupVisible = true
+//        this.selectModel = 0
+//        this.loadStores(1, null)
+//      },
       storeSelect () {
         this.popupVisible = true
         this.selectModel = 1
-        if (this.dealerId) {
-          this.loadStores(2, this.dealerId)
+        if (this.storeId) {
+          this.loadStores(2, this.storeId)
         }
       },
       scanCode () {
@@ -176,6 +176,7 @@
         if (this.$route.query.token) {
           this.axios.defaults.headers.common['Authorization'] = this.$route.query.token
         }
+        this.storeId = this.$route.query.storeId
       }
     }
   }
@@ -190,8 +191,7 @@
   .h-btn-container {
     height: 3rem;
     width: 100%;
-    padding: 1rem;
-    margin-top: 1rem;
+    padding: 2rem;
   }
 
   .action-btn{

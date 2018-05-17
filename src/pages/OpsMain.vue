@@ -1,18 +1,17 @@
 <template>
   <div class="container">
 
-    <div class="h-buttons-container"  style="background-color: #666f76;height: 50vw">
+    <div class="h-buttons-container"  style="background-color: #666f76;height: 44vw">
 
       <div class="v-button"  @click="finish">
         <img src="../assets/icons8-refund.png" class="v-button-icon"/>
-        <p class="v-button-title" style="color: white">退租</p>
+        <p class="v-button-title" style="color: white">退租退电</p>
       </div>
+      <div class="v-button"></div>
       <div class="v-button"  @click="replace">
         <img src="../assets/icons8-replace.png" class="v-button-icon"/>
-        <p class="v-button-title" style="color: white">售后</p>
+        <p class="v-button-title" style="color: white">售后换电</p>
       </div>
-      <!--<div class="v-button"></div>-->
-      <!--<div class="v-button"></div>-->
     </div>
     <div style="height: 1rem"></div>
     <div style="width:100%;height:1px;margin:0px ;autopadding:0px;background-color:#E0E0E0;overflow:hidden"></div>
@@ -22,13 +21,13 @@
       <div class="h-buttons-container">
         <div class="v-button"  @click="batteryStatistics">
           <img src="../assets/icons8-positive_dynamic.png" class="v-button-icon"/>
-          <p class="v-button-title">统计</p>
+          <p class="v-button-title">电池统计</p>
         </div>
 
         <div style="width: 1px; height: 100%;background-color: #e2e2e2"></div>
         <div class="v-button"  @click="search">
           <img src="../assets/icons8-search.png" class="v-button-icon"/>
-          <p class="v-button-title">查询</p>
+          <p class="v-button-title">电池查询</p>
         </div>
 
         <div style="width: 1px; height: 100%;background-color: #e2e2e2"></div>
@@ -38,7 +37,7 @@
         <!--</div>-->
         <div class="v-button"  @click="batteryDistribution">
           <img src="../assets/icons8-scan_stock.png" class="v-button-icon"/>
-          <p class="v-button-title">分配</p>
+          <p class="v-button-title">电池调拨</p>
         </div>
       </div>
     </div>
@@ -46,12 +45,12 @@
       <div class="h-buttons-container">
         <div class="v-button"  @click="batteryStatistics">
           <img src="../assets/icons8-positive_dynamic.png" class="v-button-icon"/>
-          <p class="v-button-title">统计</p>
+          <p class="v-button-title">电池统计</p>
         </div>
         <div style="width: 1px; height: 100%;background-color: #e2e2e2"></div>
         <div class="v-button"  @click="batteryDistribution">
           <img src="../assets/icons8-scan_stock.png" class="v-button-icon"/>
-          <p class="v-button-title">分配</p>
+          <p class="v-button-title">电池调拨</p>
         </div>
         <div style="width: 1px; height: 100%;background-color: #e2e2e2"></div>
         <div class="v-button"  >
@@ -64,7 +63,7 @@
       <div class="h-buttons-container">
         <div class="v-button"  @click="batteryStatistics">
           <img src="../assets/icons8-positive_dynamic.png" class="v-button-icon"/>
-          <p class="v-button-title">统计</p>
+          <p class="v-button-title">电池统计</p>
         </div>
         <div style="width: 1px; height: 100%;background-color: #e2e2e2"></div>
         <div class="v-button"  >

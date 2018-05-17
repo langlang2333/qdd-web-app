@@ -1,14 +1,14 @@
 <template>
   <div class="page-navbar">
-   <div class="searchDiv">
-    <select v-model="selected2" type="text" class="sechgg">
-      <option selected = "selected" value="0"  >请选择</option>
-      <option v-for="option in options" v-bind:value="option.id">
-        {{ option.name }}
-      </option>
-    </select>
-   <!--<mt-button class="mintui mintui-search" style="width:40px; height: 40px;margin-left: 8px;" @click="loadStatistics"></mt-button>-->
- </div>
+   <!--<div class="searchDiv">-->
+    <!--<select v-model="selected2" type="text" class="sechgg">-->
+      <!--<option selected = "selected" value="0"  >请选择</option>-->
+      <!--<option v-for="option in options" v-bind:value="option.id">-->
+        <!--{{ option.name }}-->
+      <!--</option>-->
+    <!--</select>-->
+   <!--&lt;!&ndash;<mt-button class="mintui mintui-search" style="width:40px; height: 40px;margin-left: 8px;" @click="loadStatistics"></mt-button>&ndash;&gt;-->
+ <!--</div>-->
 
 
 <div>
@@ -91,7 +91,7 @@
     methods: {
       loadStatistics () {
         // http://cjl3.rokyinfo.net:7200/api-ebike/v3.1/ebikes/rent-statistics?storeId=19966&_=1524905367769
-        this.axios.get('/api-user/v3.1/ebikestores/list-4-manager?category=2&showFlag=0&sort=code,asc&model=list&limit=100&page=1&showTotalStatistics=true&parentId=' + this.selected2,
+        this.axios.get('/api-user/v3.1/ebikestores/list-4-manager?category=2&showFlag=0&sort=code,asc&model=list&limit=100&page=1&showTotalStatistics=true&parentId=' + this.storeId,
           {
             params: {
             }
@@ -146,7 +146,7 @@
         }
         this.storeId = this.$route.query.storeId
       }
-      this.loadoPtions()
+      this.loadStatistics()
     }
   }
 //  Vue.component('table-operation', {
